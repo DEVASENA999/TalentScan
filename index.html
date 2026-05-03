@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Eligibility & Salary Estimator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Background grid decoration -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">TalentScan<span class="logo-dot">.</span></span>
+      </div>
+      <p class="header-sub">Job Eligibility &amp; Salary Estimator — JS Fundamentals Edition</p>
+    </div>
+  </header>
+
+  <!-- ===== MAIN WRAPPER ===== -->
+  <main class="main-wrapper">
+
+    <!-- ===== FORM PANEL ===== -->
+    <section class="form-panel glass-card" id="formPanel">
+      <div class="panel-header">
+        <h2 class="panel-title">Candidate Input</h2>
+        <p class="panel-desc">Fill in details for up to <strong>3 candidates</strong>. Results appear below.</p>
+      </div>
+
+      <form id="candidateForm" novalidate>
+
+        <!-- Candidate Name -->
+        <div class="field-group">
+          <label for="candidateName">Candidate Name</label>
+          <input type="text" id="candidateName" placeholder="e.g. Arjun Sharma" autocomplete="off" />
+          <span class="field-error" id="nameError"></span>
+        </div>
+
+        <!-- Age -->
+        <div class="field-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" placeholder="18 – 60" min="1" max="100" />
+          <span class="field-error" id="ageError"></span>
+        </div>
+
+        <!-- Education -->
+        <div class="field-group">
+          <label for="education">Education Level</label>
+          <div class="select-wrapper">
+            <select id="education">
+              <option value="">— Select —</option>
+              <option value="graduate">Graduate (B.Tech / B.Sc / BCA)</option>
+              <option value="postgraduate">Postgraduate (M.Tech / MBA / MCA)</option>
+              <option value="non-it">Non-IT Background</option>
+            </select>
+          </div>
+          <span class="field-error" id="eduError"></span>
+        </div>
+
+        <!-- JS Skill Score -->
+        <div class="field-group">
+          <label for="skillScore">
+            JavaScript Skill Score
+            <span class="label-badge" id="scoreDisplay">—</span>
+          </label>
+          <input type="range" id="skillScore" min="0" max="100" value="50" class="range-input" />
+          <div class="range-track-labels">
+            <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+          </div>
+          <!-- Progress bar visual -->
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-fill" id="skillBarFill"></div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="field-group">
+          <label for="projects">Projects Completed</label>
+          <input type="number" id="projects" placeholder="0 – 20" min="0" max="50" />
+          <span class="field-error" id="projError"></span>
+        </div>
+
+        <!-- Relocate -->
+        <div class="field-group">
+          <label>Willing to Relocate?</label>
+          <div class="radio-group">
+            <label class="radio-option" id="radioYesLabel">
+              <input type="radio" name="relocate" value="yes" id="relocateYes" />
+              <span class="radio-custom"></span>
+              <span>Yes</span>
+            </label>
+            <label class="radio-option" id="radioNoLabel">
+              <input type="radio" name="relocate" value="no" id="relocateNo" />
+              <span class="radio-custom"></span>
+              <span>No</span>
+            </label>
+          </div>
+          <span class="field-error" id="relocateError"></span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-row">
+          <button type="submit" class="btn btn-primary" id="submitBtn">
+            <span class="btn-icon">▶</span> Analyse Candidate
+          </button>
+          <button type="button" class="btn btn-ghost" id="resetBtn">
+            <span class="btn-icon">↺</span> Reset All
+          </button>
+        </div>
+
+        <!-- Counter indicator -->
+        <div class="candidate-counter">
+          <span id="counterText">0 / 3 candidates added</span>
+          <div class="counter-dots">
+            <span class="dot" id="dot0"></span>
+            <span class="dot" id="dot1"></span>
+            <span class="dot" id="dot2"></span>
+          </div>
+        </div>
+
+        
+      </form>
+    </section>
+
+    <!-- ===== RESULTS PANEL ===== -->
+    <section class="results-panel" id="resultsPanel">
+      <div class="results-header" id="resultsHeader" style="display:none">
+        <h2 class="panel-title">Analysis Reports</h2>
+        <p class="panel-desc">Detailed eligibility &amp; salary breakdown for each candidate.</p>
+      </div>
+      <!-- Report cards are injected here by JS -->
+      <div class="cards-container" id="cardsContainer"></div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>TalentScan — Built with vanilla JS · No frameworks · Just fundamentals.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
