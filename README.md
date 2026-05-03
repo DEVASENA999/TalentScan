@@ -144,8 +144,28 @@ TalentScan/
 ---
 
 ## Screenshots
+                                                            Landing Page with footer
 
-Add screenshots here after deployment.
+<img width="1920" height="1080" alt="Landing page with footer" src="https://github.com/user-attachments/assets/35c998e3-fe4b-4a7a-b538-321196cd80f9" />
+
+
+
+                                                        After giving inputs , the outputs 
+
+<img width="1920" height="1080" alt="After giving input" src="https://github.com/user-attachments/assets/ce20453c-100b-410f-a72d-b51fbb773f91" />
+
+
+                                                                        outputs
+
+<img width="1920" height="1080" alt="outputs" src="https://github.com/user-attachments/assets/6d1ad9ce-f2b6-4512-8739-8b6d882644ab" />
+
+
+
+
+
+
+
+
 
 ---
 
